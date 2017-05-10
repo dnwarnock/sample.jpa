@@ -25,9 +25,7 @@ Use the following steps to run the application with Maven:
     $ mvn clean install
     ```
 
-2. Navigate to `target/liberty/wlp/bin` and run `./installUtility install defaultServer` to install the features required by the server.
-
-3. To run the server with the Servlet sample execute:
+2. To run the server with the Servlet sample execute:
     ```bash
     $ mvn liberty:run-server
     ```
