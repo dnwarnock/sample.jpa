@@ -8,7 +8,7 @@
         <groupId>net.wasdev.wlp.maven.parent</groupId>
         <artifactId>liberty-maven-app-parent</artifactId>
         <version>2.0-SNAPSHOT</version>
-    </parent>
+	</parent>
 
 	<groupId>liberty.maven</groupId>
 	<artifactId>jpaApp</artifactId>
@@ -53,7 +53,7 @@
 				<packaging.type>runnable</packaging.type>
 			</properties>
 		</profile>
-		<profile>
+	<profile>
 			<id>liberty-test</id>
 
 			<!--Do not start the server unless testing -->
@@ -154,19 +154,6 @@
 					</execution>
 				</executions>
 			</plugin>
-			<plugin>
-		        <groupId>org.apache.maven.plugins</groupId>
-		        <artifactId>maven-war-plugin</artifactId>
-		        <version>3.0.0</version>
-		        <configuration>
-		          <webResources>
-		            <resource>
-		              <!-- this is relative to the pom.xml directory -->
-		              <directory>src/main/liberty/config</directory>
-		            </resource>
-		          </webResources>
-		        </configuration>
-      		</plugin>
 			<!-- Enable liberty-maven plugin -->
 			<plugin>
 				<groupId>net.wasdev.wlp.maven.plugins</groupId>
