@@ -53,47 +53,6 @@
 				<packaging.type>runnable</packaging.type>
 			</properties>
 		</profile>
-	<profile>
-			<id>liberty-test</id>
-
-			<!--Do not start the server unless testing -->
-
-			<activation>
-				<property>
-					<name>skipTests</name>
-					<value>!true</value>
-				</property>
-			</activation>
-
-			<build>
-				<plugins>
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-dependency-plugin</artifactId>
-						<version>3.0.0</version>
-						<executions>
-							<execution>
-								<id>copy-derby</id>
-								<phase>package</phase>
-								<goals>
-									<goal>copy</goal>
-								</goals>
-								<configuration>
-		              		  	<artifactItems>
-                    				<artifactItem>
-    								<groupId>org.apache.derby</groupId>
-    								<artifactId>derby</artifactId>
-    								<version>10.13.1.1</version>
-                        			<outputDirectory>${project.build.directory}/liberty/wlp/usr/shared/resources</outputDirectory>                                 
-                    				</artifactItem>
-               					</artifactItems>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-				</plugins>
-			</build>
-		</profile>
 	</profiles>
 
 	<dependencies>
@@ -150,6 +109,30 @@
 								<exclude>**/it/**</exclude>
 							</excludes>
 							<reportsDirectory>${project.build.directory}/test-reports/unit</reportsDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>copy-derby</id>
+						<phase>package</phase>
+						<goals>
+							<goal>copy</goal>
+						</goals>
+						<configuration>
+              		  	<artifactItems>
+                  				<artifactItem>
+  								<groupId>org.apache.derby</groupId>
+  								<artifactId>derby</artifactId>
+  								<version>10.13.1.1</version>
+                      			<outputDirectory>${project.build.directory}/liberty/wlp/usr/shared/resources</outputDirectory>                                 
+                  				</artifactItem>
+             					</artifactItems>
 						</configuration>
 					</execution>
 				</executions>
