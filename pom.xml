@@ -191,9 +191,6 @@
 							<goal>integration-test</goal>
 						</goals>
 						<configuration>
-							<includes>
-								<include>**/it/**</include>
-							</includes>
 							<systemPropertyVariables>
 								<liberty.test.port>${testServerHttpPort}</liberty.test.port>
 								<war.context>${warContext}</war.context>
